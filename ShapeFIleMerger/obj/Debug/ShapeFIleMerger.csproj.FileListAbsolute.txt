@@ -1,0 +1,6 @@
+C:\Users\brad\Documents\Visual Studio 2015\ShapeFIleMerger\ShapeFIleMerger\bin\Debug\ShapeFIleMerger.exe.config
+C:\Users\brad\Documents\Visual Studio 2015\ShapeFIleMerger\ShapeFIleMerger\bin\Debug\ShapeFIleMerger.exe
+C:\Users\brad\Documents\Visual Studio 2015\ShapeFIleMerger\ShapeFIleMerger\bin\Debug\ShapeFIleMerger.pdb
+C:\Users\brad\Documents\Visual Studio 2015\ShapeFIleMerger\ShapeFIleMerger\obj\Debug\ShapeFIleMerger.csprojResolveAssemblyReference.cache
+C:\Users\brad\Documents\Visual Studio 2015\ShapeFIleMerger\ShapeFIleMerger\obj\Debug\ShapeFIleMerger.exe
+C:\Users\brad\Documents\Visual Studio 2015\ShapeFIleMerger\ShapeFIleMerger\obj\Debug\ShapeFIleMerger.pdb
