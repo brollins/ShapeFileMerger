@@ -19,28 +19,7 @@ namespace ShapeFileMerger
 
         public PolyLine(BinaryReader reader)
         {
-            ShapeType = reader.ReadInt32();
-            BoundingBoxXmin = reader.ReadDouble();
-            BoundingBoxYmin = reader.ReadDouble();
-            BoundingBoxXmax = reader.ReadDouble();
-            BoundingBoxYmax = reader.ReadDouble();
-            numParts = reader.ReadInt32();
-            numPoints = reader.ReadInt32();
-
-            Collection<int> parts = new Collection<int>();
-            for (int part = 0; part < numParts; part++)
-            {
-                parts.Add(reader.ReadInt32());             
-            }
-            Console.WriteLine(string.Format("Parts:  {0}", parts.Count));
-
-            Collection<Point> points = new Collection<Point>();
-            for (int point = 0; point < numPoints; point++)
-            {
-                Point pointRec = new Point(reader);
-                points.Add(pointRec);
-                Console.WriteLine(string.Format("Point: {0}, {1}", pointRec.X, pointRec.Y));
-            }
+            this.LoadCore(reader);
         }
 
       
@@ -119,6 +98,31 @@ namespace ShapeFileMerger
             set
             {
                 boundingBoxYmax = value;
+            }
+        }
+        protected override void LoadCore(BinaryReader reader)
+        {
+            ShapeType = reader.ReadInt32();
+            BoundingBoxXmin = reader.ReadDouble();
+            BoundingBoxYmin = reader.ReadDouble();
+            BoundingBoxXmax = reader.ReadDouble();
+            BoundingBoxYmax = reader.ReadDouble();
+            numParts = reader.ReadInt32();
+            numPoints = reader.ReadInt32();
+
+            Collection<int> parts = new Collection<int>();
+            for (int part = 0; part < numParts; part++)
+            {
+                parts.Add(reader.ReadInt32());
+            }
+            Console.WriteLine(string.Format("Parts:  {0}", parts.Count));
+
+            Collection<Point> points = new Collection<Point>();
+            for (int point = 0; point < numPoints; point++)
+            {
+                Point pointRec = new Point(reader);
+                points.Add(pointRec);
+                Console.WriteLine(string.Format("Point: {0}, {1}", pointRec.X, pointRec.Y));
             }
         }
     }

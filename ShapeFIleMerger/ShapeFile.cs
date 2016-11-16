@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -16,14 +17,17 @@ namespace ShapeFileMerger
 
         public ShapeFile(string shapeFileName)
         {
+            recordHeaders = new Collection<RecordHeader>();
+            geometries = new Collection<Geometry>();
             BinaryReader reader = new BinaryReader(File.OpenRead(shapeFileName));
             Header = new ShapeFileHeader(reader);
-
-           
+                     
 
             while (reader.BaseStream.Position != reader.BaseStream.Length)
             {
-                recordHeaders.Add(new RecordHeader(reader));
+                RecordHeader recHead = new RecordHeader(reader);
+
+                recordHeaders.Add(recHead);
 
                 if (header.ShapeType == 1)
                 {
@@ -42,6 +46,12 @@ namespace ShapeFileMerger
                     geometries.Add(new MultiPoint(reader));
                 }
             }
+
+            foreach (var geometry in geometries)
+            {
+                geometry.Load(reader);
+            }
+
         }
          
 
