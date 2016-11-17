@@ -39,7 +39,7 @@ namespace ShapeFileMerger
         public int NumPoints
         {
             get
-            {
+            { 
                 return numPoints;
             }
 
