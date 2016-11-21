@@ -16,6 +16,8 @@ namespace ShapeFileMerger
             //string source1 = @"..\..\data\Streets.shp";
             //string source1 = @"..\..\data\Medical_Facilities.shp";
             string source1 = @"..\..\data\Multipass.shp";
+            //string source1 = @"..\..\data\Multipass.shx";
+
 
             ShapeFile file = new ShapeFile(source1);
             Console.ReadKey();

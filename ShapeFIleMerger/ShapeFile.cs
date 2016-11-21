@@ -14,6 +14,7 @@ namespace ShapeFileMerger
         private ShapeFileHeader header;
         private Collection<Geometry> geometries;
         private Collection<RecordHeader> recordHeaders;
+        private ShapeFileShx shx;
 
         public ShapeFile(string shapeFileName)
         {
@@ -21,7 +22,8 @@ namespace ShapeFileMerger
             geometries = new Collection<Geometry>();
             BinaryReader reader = new BinaryReader(File.OpenRead(shapeFileName));
             Header = new ShapeFileHeader(reader);
-                     
+            //shx = new ShapeFileShx(reader);
+
 
             while (reader.BaseStream.Position != reader.BaseStream.Length)
             {
@@ -51,7 +53,6 @@ namespace ShapeFileMerger
             {
                 geometry.Load(reader);
             }
-
         }
          
 

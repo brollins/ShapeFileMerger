@@ -45,16 +45,7 @@ namespace ShapeFileMerger
         }
         protected override void LoadCore(BinaryReader reader)
         {
-         
-            //if (includeShapeType == true)
-            //{
-            //    ShapeType = reader.ReadInt32();
-            //}
-            //else
-            //{
-            //    ShapeType = 1;
-            //}
-
+            ShapeType = reader.ReadInt32();
             x = reader.ReadDouble();
             y = reader.ReadDouble();
             Console.WriteLine(string.Format("Point: {0}, {1}", x, y));
