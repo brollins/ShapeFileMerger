@@ -15,11 +15,19 @@ namespace ShapeFileMerger
             //string source1 = @"..\..\data\ISD_Boundary.shp";
             //string source1 = @"..\..\data\Streets.shp";
             //string source1 = @"..\..\data\Medical_Facilities.shp";
-            string source1 = @"..\..\data\Multipass.shp";
-            //string source1 = @"..\..\data\Multipass.shx";
+            string source1 = @"..\..\data\ISD_boundary - copy.shp";
+            string source2 = @"..\..\data\ISD_boundary.shp";
+
+            File.Delete(@"..\..\data\mergedstreets.shp");
+            File.Delete(@"..\..\data\mergedstreets.shx");
 
 
-            ShapeFile file = new ShapeFile(source1);
+            Merger merge = new Merger(source1, source2, @"..\..\data\mergedstreets.shp");
+
+
+            ShapeFile file = new ShapeFile(@"..\..\data\mergedstreets.shp");
+
+
             Console.ReadKey();
 
             //int numberOfRecords = (header.FileLength - 50) / 14;

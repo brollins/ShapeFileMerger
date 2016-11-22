@@ -116,12 +116,12 @@ namespace ShapeFileMerger
             }
             Console.WriteLine(string.Format("Parts:  {0}", parts.Count));
 
-            Collection<Point> points = new Collection<Point>();
+            Collection<PolyPoint> points = new Collection<PolyPoint>();
             for (int point = 0; point < numPoints; point++)
             {
-                Point pointRec = new Point(reader);
+                PolyPoint pointRec = new PolyPoint(reader);
                 points.Add(pointRec);
-                Console.WriteLine(string.Format("Point: {0}, {1}", pointRec.X, pointRec.Y));
+                Console.WriteLine(string.Format("PolyPoint: {0}, {1}", pointRec.X, pointRec.Y));
             }
         }
     }

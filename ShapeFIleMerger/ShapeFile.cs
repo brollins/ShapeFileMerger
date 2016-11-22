@@ -24,6 +24,7 @@ namespace ShapeFileMerger
             Header = new ShapeFileHeader(reader);
             //shx = new ShapeFileShx(reader);
 
+            int counter = 0;
 
             while (reader.BaseStream.Position != reader.BaseStream.Length)
             {
@@ -47,12 +48,8 @@ namespace ShapeFileMerger
                 {
                     geometries.Add(new MultiPoint(reader));
                 }
-            }
-
-            foreach (var geometry in geometries)
-            {
-                geometry.Load(reader);
-            }
+                counter++;
+            }           
         }
          
 
